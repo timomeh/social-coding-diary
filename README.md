@@ -1,1 +1,1 @@
-# Social Coding Diary
+# Social Coding Diary 📖
