@@ -180,7 +180,7 @@ Social Coding Diary 📖
 
 In einem von mir nicht mehr gepflegten Repo wurde ein [Pull Request](https://github.com/timomeh/ejs-helper/pull/3) eröffnet. \\o/ Zwar wurden hier schonmal Pull Requests erstellt, doch habe ich ihn diesmal als *Merge and squash* durchgeführt. Die Änderungen waren nicht dramatisch genug, um alle 3 Commits des Forks mit in die History zu übernehmen. Außerdem war ich dabei dieses mal nicht so angespannt, dass ich mich gefühlt habe, als würde ich gleich in Flammen aufgehen.
 
-Jetzt hab ich auch endlich rausgefunden, woher dieses "<user> committed with <user>" kommt!  
+Jetzt hab ich auch endlich rausgefunden, woher dieses "*user* committed with *user*" kommt!  
 ![](https://cloud.githubusercontent.com/assets/4227520/14833542/1ba2f954-0c00-11e6-8bc4-42ed31dbc198.png)
 
 Nach dem Merge habe ich das im Repo vernachlässigte git-flow wieder anständig zurechtgebogen, die Version-Number gebumped, das alles gepushed und auf npm published.
