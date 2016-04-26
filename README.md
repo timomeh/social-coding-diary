@@ -157,7 +157,7 @@ Changed emoji
 $ git cat-file -p da21932 # sha von "tree"
 100644 blob 7609c14e153564914d973c2a4b3e19b6491b36c9    README.md
 $ git cat-file -p 7609c14 # sha von der Datei README.md
-\# Social Coding Diary 📚
+Social Coding Diary 📚
 
 $ git cat-file -t 53851de # sha von "parent"
 commit
@@ -171,7 +171,7 @@ Added cool emoji
 $ git cat-file -p c411b63 # sha von neuem "tree"
 100644 blob c5301155139a323b1ff0ef3333b92bbc884d4251    README.md
 $ git cat-file -p c530115 # sha von der Datei README.md
-\# Social Coding Diary 📖
+Social Coding Diary 📖
 ```
 
 ## Own adventures
