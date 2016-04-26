@@ -3,7 +3,7 @@
 <!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Sessions](#sessions)
-	- [#02 – Git Basics](#02-git-basics)
+	- [#02 - Git Basics](#02-git-basics)
 - [Own adventures](#own-adventures)
 	- [omg a pull request](#omg-a-pull-request)
 
@@ -11,7 +11,7 @@
 
 ## Sessions
 
-### #02 – Git Basics
+### #02 - Git Basics
 
 #### Verschiedene "Dateispeicher"
 
