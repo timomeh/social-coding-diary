@@ -140,7 +140,7 @@ Wenn Linus das sagt, glaube ich ihm mal. Soll ja ein ganz intelligenter Mann sei
 
 #### Extravaganza
 
-Git ist eigentlich ein simpler key-value-store. Zu einem sha-hash (key) wird der Inhalt gespeichert (value). Um ein Object anzusehen, gibt es `git cat file`.
+Git ist eigentlich ein simpler key-value-store. Zu einem sha-hash (key) wird der Inhalt gespeichert (value). Um ein Object anzusehen, gibt es `git cat-file`.
 
 Hier ein Beispiel:
 
