@@ -11,6 +11,7 @@
 	- [#05 Talk Prepartion](#05-talk-prepartion)
 	- [#06 Talks & Golf](#06-talks-golf)
 	- [#07 Bugfixing & Testing](#07-bugfixing-testing)
+	- [#08 Testing & Dotfiles](#08-testing-dotfiles)
 
 <!-- /TOC -->
 
@@ -306,4 +307,30 @@ Oft hat man `describe` und `it` zur Verfügung.
 
 Mit `describe` kann man einen Block mit mehreren Tests erstellen. Ein Test befindet sich jeweils in einem `it`.
 
-In dieser Session haben wir vorwiegend um Unit Tests gekümmert.
+In dieser Session haben wir vorwiegend um Unit Tests gekümmert. Bei Unit Tests werden sehr kleine Einheiten im Code getestet.
+
+### #08 Testing & Dotfiles
+
+*20. Juli – Zusatz-Session*
+
+Aufbauend auf der letzten Session haben wir uns noch intensiver um Unit Tests gekümmert. Augenmerk war hier auf mocking, stubbing und faking. Die grobe Funktionsweise habe ich verstanden, genaueres noch nicht; beim nächsten Testing weiß ich allerdings, dass es das gibt und kann mich näher einlesen, wie ich es anwende.
+
+Außerdem haben wir uns Acceptance Tests angeschaut. Diese sind vom Test-Framework wie Unit Tests aufgebaut, man testet damit allerdings im Gegensatz zu Unit Tests größere Einheiten (z.B. nur den kompletten Output einer Funktion).
+
+#### dotfiles
+
+Zum Ende haben wir uns noch über dotfiles unterhalten und wie man diese am besten verwaltet. Das war für mich sehr interessant, da ich mich darum schon immer mal kümmern wollte und mein aktuelles Setup gar nicht strukturiert war.
+
+Dotfiles sind die `.*` Dateien im Home-Verzeichnis des Benutzers, die verschiedene Konfigurationen zu Programmen – beispielsweise der Shell – beinhalten. Diese kann man über git verwalten und mit einem Skript symlinken. Dort kann man aber auch Dateien ablegen, um das Initialsetup zu installieren und um beispielsweise macOS defaults zu setzen.
+
+Ich hatte zsh als Shell verwendet, allerdings über oh-my-zsh, was immer sehr langsam und unübersichtlich war.
+
+Nachdem ich meinen Mac neu aufgesetzt habe, habe ich mich direkt um gut strukturierte dotfiles gekümmert. Anstatt von oh-my-zsh verwende ich nun zsh in Verbindung mit [antibody](https://github.com/getantibody/antibody) als Plugin System. Dazu habe ich mir ein Prompt-Theme und eine asynchrone Wetter-Anzeige für das Terminal gebastelt.
+
+Um die dotfiles zu symlinken habe ich mir ein eigenes Skript geschrieben.
+
+Meine dotfiles verwalte ich nun endlich über [timomeh/dotfiles](https://github.com/timomeh/dotfiles).
+
+---
+
+🚀
