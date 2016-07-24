@@ -9,12 +9,12 @@
 	- [#03 Deploy](#03-deploy)
 	- [#04 cologne.rb](#04-colognerb)
 	- [#05 Talk Prepartion](#05-talk-prepartion)
+	- [#06 Talks & Golf](#06-talks-golf)
 
 <!-- /TOC -->
 
 ## Sessions
 
-25. Mai: Talk preperation
 1. Juni: Talks und Golf
 8. Juni: Testing / Bugfixing
 20. Juli
@@ -266,3 +266,33 @@ Eine Folie mit Twitter-Handle o.ä. eignet sich auch als Schluss-Folie, die län
 Im Mittelteil hilft es, wenn man seine Slides strukturiert darstellt und wiederkehrende visuelle Elemente einsetzt, um die Strukturierung des Talks zu unterstützen.
 
 Beim Erstellen des Talks sollte man sich zuerst eine Outline zurecht legen. In der Outline wird grob notiert, in welcher Reihenfolge welche (groben) Themen angesprochen werden. Das muss nicht allzu genau sein.
+
+#### Eigener Talk
+
+Zum Ende sollte ein eigenes Thema für einen Talk gefunden werden und eine Outline verfasst werden.
+
+Als Thema habe ich mir das Module Loading System in Node.js ausgesucht und dazu eine [talk-outline.md](Outline) erstellt.
+
+In der Retrospektiven waren einige Teile der Outline zu genau und andere etwas zu unüberlegt. Auch war das Wording von Themenblöcken nicht final, weshalb ich mich beim Erstellen des Talks außerdem noch darum kümmern musste.
+
+### #06 Talks & Golf
+
+*1. Juni*
+
+#### Talks
+
+Zu Beginn der 6. Session wurden die vorbereiteten Talks gehalten.
+
+**Kritik am eigenen Talk:** Ich hatte meine Outline nochmals kurzfristig umgestellt, wodurch leider der rote Faden des Talks verloren ging. (Ursprünglich wollte ich den Weg zeigen, wie ich versucht habe, ein eigenes Module Loading System zu bauen und dann zufällig das native Module Loading System grob nachgebaut habe.) Außerdem hatte ich keine Folien, um mich vorzustellen. Auch war die Abschluss-Folie etwas seltsam gewählt, was gewirkt hatte, als würde ich mitten im Thema aufhören. Es war kein echter Schluss erkennbar.
+
+#### Golf
+
+Im Anschluss haben wir gemeinsam versucht, das im Golf-Talk von [Session #4](#04-colognerb) gezeigte golfen selbst umzusetzen.
+
+Mein Ergebnis war ein HTTP Server in Node, der als Proxy Bilder von [loremflickr.com](http://loremflickr.com) ausgegeben hat.
+
+```sh
+node -e "h=require('http');h.createServer((a,b)=>h.get('http://loremflickr'+'.com/320/240'+a.url,r=>r.pipe(b)).end()).listen(1337)"
+```
+
+Zusammen mit dem Hashtag #nodejs hat das in [einen Tweet](https://twitter.com/timomeh/status/738021433939505152) gepasst.
