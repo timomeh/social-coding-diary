@@ -3,15 +3,27 @@
 <!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Sessions](#sessions)
-	- [#02 Git Basics](#02-git-basics)
-- [Own adventures](#own-adventures)
-	- [omg a pull request](#omg-a-pull-request)
+	- [#01 Git Basics](#01-git-basics)
+	- [Own adventures - omg a pull request](#own-adventures-omg-a-pull-request)
+	- [#02 Hacking & Contributing](#02-hacking-contributing)
+	- [#03 Deploy](#03-deploy)
+	- [#04 cologne.rb](#04-colognerb)
+	- [#05 Talk Prepartion](#05-talk-prepartion)
 
 <!-- /TOC -->
 
 ## Sessions
 
-### #02 Git Basics
+25. Mai: Talk preperation
+1. Juni: Talks und Golf
+8. Juni: Testing / Bugfixing
+20. Juli
+
+### #01 Git Basics
+
+*20. April*
+
+In der ersten Sessions wurden alle Basics zu git erklärt. Im Folgenden eine Auflistung:
 
 #### Verschiedene "Dateispeicher"
 
@@ -174,9 +186,7 @@ $ git cat-file -p c530115 # sha von der Datei README.md
 Social Coding Diary 📖
 ```
 
-## Own adventures
-
-### omg a pull request
+### Own adventures - omg a pull request
 
 In einem von mir nicht mehr gepflegten Repo wurde ein [Pull Request](https://github.com/timomeh/ejs-helper/pull/3) eröffnet. \\o/ Zwar wurden hier schonmal Pull Requests erstellt, doch habe ich ihn diesmal als *Merge and squash* durchgeführt. Die Änderungen waren nicht dramatisch genug, um alle 3 Commits des Forks mit in die History zu übernehmen. Außerdem war ich dabei dieses mal nicht so angespannt, dass ich mich gefühlt habe, als würde ich gleich in Flammen aufgehen.
 
@@ -186,3 +196,73 @@ Jetzt hab ich auch endlich rausgefunden, woher dieses "*user* committed with *us
 Nach dem Merge habe ich das im Repo vernachlässigte git-flow wieder anständig zurechtgebogen, die Version-Number gebumped, das alles gepushed und auf npm published.
 
 Yeeeah.
+
+### #02 Hacking & Contributing
+
+*27. April*
+
+Ziel der Session war es, bei einem vorhandenen Projekt mitzuwirken. Am besten natürlich etwas hacken und einen Pull Request dazu eröffnen, aber auch Issues erstellen und bei Issues helfen ist ein nicht zu unterschätzender Teil beim Contributing.
+
+#### hacken.in
+
+Eine mögliche Unterstützung wäre bei der 404-Page für hacken.in. Hierfür gibt es auch [Issue #630](https://github.com/hacken-in/website/issues/630), bei dem ich meine Unterstützung angeboten habe und positives Feedback bekommen habe. Problematisch wurde es dann allerdings beim Vagrant Setup, bei dem es Probleme mit der Ruby Version gab. Dazu habe ich einen weiteren [Issue](https://github.com/hacken-in/website/issues/642) eröffnet. Um das Problem zu beheben, wurde ein [Pull Request](https://github.com/hacken-in/website/pull/644) gestellt, der noch immer offen ist. Scheinbar gibt es noch Probleme mit dem Setup (siehe [#646](https://github.com/hacken-in/website/issues/646)).
+
+#### atom-material-ui
+
+Das [Material Theme für Atom](https://github.com/atom-material/atom-material-ui/) bekam ein größeres Update, bei dem selektierbare Elemente der Command Palette nicht als selektiert angezeigt wurden. Dazu hatte ich einen [Issue](https://github.com/atom-material/atom-material-ui/issues/265) erstellt. Nachdem der Repo-Eigentümer sich selbst assigned hat, wollte ich nicht direkt selbst den Issue beheben und "ihm in sein Handwerk pfuschen" – außerdem habe ich nicht viel Erfahrung, wie Atom Themes im HTML und CSS aufgebaut sind. Vor allem bei dem Material Theme ist das CSS nicht leicht zu durchblicken. Ich habe mich zwar dran versucht, den Fehler zu beheben (auch erstmal vorrübergehend für mich), und konnte die Schriftfarbe für ein selektiertes Element anpassen. Da das visuell nicht wirklich gut war, habe ich dazu keinen PR erstellt.
+Der Issue wurde in der darauf folgenden Woche vom Repo-Eigentümer gefixt.
+
+### #03 Deploy
+
+*4. Mai*
+
+#### Vagrant
+
+Um lokal zu entwickeln, empfiehlt sich eine Virtualisierung mit [Vagrant](https://www.vagrantup.com). Vagrant ermöglicht es, mit einer Konfigurationsdatei eine lauffähige Virtuelle Maschine zu starten. Vagrant bedient sich hierbei anderen Virtualisierungs-Providern wie vmware oder VirtualBox.
+
+Die Virtualisierung hat den Vorteil, dass man keine Pakete direkt auf dem eigenen Betriebssystem installieren muss. Man kann Konfigurationen anpassen und darf auch mal Fehler machen – im schlimmsten Fall muss man die Virtuelle Maschine nur löschen und neu installieren. Auch kann man, sollte man an einem Projekt länger nicht arbeiten, es einfach vom eigenen Rechner löschen und wieder installieren, sobald man es braucht; bei einer gut konfigurierten Vagrant-Box kann man einfach dort weitermachen, wo man zuvor aufgehört hat, ohne einen Unterschied zu merken.
+
+#### heroku
+
+Um Deploying zu veranschaulichen, hat Dirk ein [deploy_example](https://github.com/wpf-social-coding/deploy_example) zur Verfügung gestellt. Das ganze konnte auf heroku deployed werden.
+
+Der Deploy auf heroku ist recht einfach. Nach einloggen (`heroku login`) und erstellen der App (`heroku create` erstellt eine "leere Umgebung"), kann direkt mit git auf heroku gepushed werden (`git push heroku master`). Nach dem Push erkennt heroku, um welche Programmierumgebung es sich handelt und führt dementsprechend den Task/die Tasks aus, um die Applikation zu builden und zu starten.  
+Da das deploy_example mit einer Postgresql-Datenbank ausgestattet war, musste die Datenbank noch migriert werden (`heroku run rake db:migrate`). Je nach Umgebung muss möglicherweise der Datenbank-Provider auf heroku ausgewählt werden.
+
+#### Selbst hosten
+
+Heroku ist zwar einfach zu bedienen und bietet einen kostenlosen Plan an, allerdings mit Einschränkungen: Die Applikation schläft nach einer gewissen Zeit ein und muss bei einem Request erst aufwachen, was ein bisschen Zeit in Anspruch nimmt. Außerdem hat jeder Account nur 1000 Stunden kostenlose Nutzung (nicht-verifizierte Account 550 Stunden) für alle Free-Dynos.  
+Eine eigene Serverumgebung kann in manchen Fällen die wirtschaflichere Lösung sein.
+
+Um zu veranschaulichen, wie man einen eigenen Server aufsetzen kann, wurde ein Droplet auf Digital Ocean erstellt. Das erstellen eines Droplets ist ebenfalls recht einfach und kostet im Monat ab 5$ (im Vergleich zu Heroku, wo ein Dyno 7$ kostet).
+
+Zwar hat man dadurch schnell einen Server zur Verfügung, muss ihn aber auch selbst konfigurieren und zuerst alle benötigten Pakete installieren. Dirk hat veranschaulicht, dass das sehr viel Zeit in Anspruch nehmen kann – vor allem, wenn man es immer wieder machen muss.
+
+Abhilfe schafft eine Automation wie [Ansible](https://www.ansible.com/). Ansible besitzt Konfigurationsdateien, mit denen Pakete installiert werden können, Konfigurationsdateien angepasst werden können und alle notwendigen Dienste gestartet werden können.  
+Auch hat das den Vorteil, dass die Ansible-Konfiguration sowohl mit Vagrant in einer VM als auch auf dem Server genutzt werden kann.
+
+
+### #04 cologne.rb
+
+*18. Mai*
+
+Zu dieser Session waren wir bei der cologne.rb Usergroup, um den typischen Ablauf einer Usergroup zu erleben. In einer gemütlichen Runde wurden 3 Talks gehalten.
+
+Der erste Talk handelte von Public/Private-Key Verschlüsselung aus mathematischer Sicht.
+
+Beim zweiten Talk wurde das Golfen vorgestellt. Ziel beim Golfen ist es, kleine Programme in so wenig Zeichen wie möglich zu schreiben. (z.B. 140 Zeichen, um es in einen Tweet senden zu können.) Der Code soll nicht schön oder lesbar sein, sondern schlichtweg so kurz wie möglich.
+
+Beim dritten Talk wurde eine Rails-App "gegolft". Am Schluss konnte eine ganze lauffähige Rails-Applikation in ~140 Zeichen erstellt werden. Natürlich besitzt eine solche Applikation dann keine besonderen Funktionen; es hilft aber stark dabei zu verstehen, wie eine größere Architektur wie Rails aufgebaut ist: welche Komponenten wann und wie greifen.
+
+### #05 Talk Prepartion
+
+*25. Mai*
+
+In dieser Session wurde gezeigt, wie man einen eigenen Talk halten kann und sich darauf vorbereitet. Talks können sowohl in kleinerem Rahmen gehalten werden (Firmenintern oder auf Usergroups) oder auch auf größeren Konferenzen.
+
+Hilfreich ist es, am Anfang eine Folie zu haben ("Folie 0"), die für sich alleine dastehen kann, bevor der eigentliche Talk beginnt: z.B. ein subtiles, passendes gif.  
+Zu Beginn sollte man das Thema nennen und sich selbst vorstellen.  
+Eine Folie mit Twitter-Handle o.ä. eignet sich auch als Schluss-Folie, die länger stehen bleiben kann.  
+Im Mittelteil hilft es, wenn man seine Slides strukturiert darstellt und wiederkehrende visuelle Elemente einsetzt, um die Strukturierung des Talks zu unterstützen.
+
+Beim Erstellen des Talks sollte man sich zuerst eine Outline zurecht legen. In der Outline wird grob notiert, in welcher Reihenfolge welche (groben) Themen angesprochen werden. Das muss nicht allzu genau sein.
