@@ -4,7 +4,7 @@
 
 - [Sessions](#sessions)
 	- [#01 Git Basics](#01-git-basics)
-	- [Own adventures - omg a pull request](#own-adventures-omg-a-pull-request)
+	- [Own adventures: omg a pull request](#own-adventures-omg-a-pull-request)
 	- [#02 Hacking & Contributing](#02-hacking-contributing)
 	- [#03 Deploy](#03-deploy)
 	- [#04 cologne.rb](#04-colognerb)
@@ -184,7 +184,7 @@ $ git cat-file -p c530115 # sha von der Datei README.md
 Social Coding Diary 📖
 ```
 
-### Own adventures - omg a pull request
+### Own adventures: omg a pull request
 
 In einem von mir nicht mehr gepflegten Repo wurde ein [Pull Request](https://github.com/timomeh/ejs-helper/pull/3) eröffnet. \\o/ Zwar wurden hier schonmal Pull Requests erstellt, doch habe ich ihn diesmal als *Merge and squash* durchgeführt. Die Änderungen waren nicht dramatisch genug, um alle 3 Commits des Forks mit in die History zu übernehmen. Außerdem war ich dabei dieses mal nicht so angespannt, dass ich mich gefühlt habe, als würde ich gleich in Flammen aufgehen.
 
