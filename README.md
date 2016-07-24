@@ -5,13 +5,13 @@
 - [Sessions](#sessions)
 	- [#01 Git Basics](#01-git-basics)
 	- [Own adventures: omg a pull request](#own-adventures-omg-a-pull-request)
-	- [#02 Hacking & Contributing](#02-hacking-contributing)
+	- [#02 Hacking, Contributing](#02-hacking-contributing)
 	- [#03 Deploy](#03-deploy)
 	- [#04 cologne.rb](#04-colognerb)
 	- [#05 Talk Prepartion](#05-talk-prepartion)
-	- [#06 Talks & Golf](#06-talks-golf)
-	- [#07 Bugfixing & Testing](#07-bugfixing-testing)
-	- [#08 Testing & Dotfiles](#08-testing-dotfiles)
+	- [#06 Talks, Golf](#06-talks-golf)
+	- [#07 Bugfixing, Testing](#07-bugfixing-testing)
+	- [#08 Testing, Dotfiles](#08-testing-dotfiles)
 
 <!-- /TOC -->
 
@@ -195,7 +195,7 @@ Nach dem Merge habe ich das im Repo vernachlässigte git-flow wieder anständig 
 
 Yeeeah.
 
-### #02 Hacking & Contributing
+### #02 Hacking, Contributing
 
 *27. April*
 
@@ -273,7 +273,7 @@ Als Thema habe ich mir das Module Loading System in Node.js ausgesucht und dazu 
 
 In der Retrospektiven waren einige Teile der Outline zu genau und andere etwas zu unüberlegt. Auch war das Wording von Themenblöcken nicht final, weshalb ich mich beim Erstellen des Talks außerdem noch darum kümmern musste.
 
-### #06 Talks & Golf
+### #06 Talks, Golf
 
 *1. Juni*
 
@@ -295,7 +295,7 @@ node -e "h=require('http');h.createServer((a,b)=>h.get('http://loremflickr'+'.co
 
 Zusammen mit dem Hashtag #nodejs hat das in [einen Tweet](https://twitter.com/timomeh/status/738021433939505152) gepasst.
 
-### #07 Bugfixing & Testing
+### #07 Bugfixing, Testing
 
 *8. Juni*
 
@@ -309,7 +309,7 @@ Mit `describe` kann man einen Block mit mehreren Tests erstellen. Ein Test befin
 
 In dieser Session haben wir vorwiegend um Unit Tests gekümmert. Bei Unit Tests werden sehr kleine Einheiten im Code getestet.
 
-### #08 Testing & Dotfiles
+### #08 Testing, Dotfiles
 
 *20. Juli – Zusatz-Session*
 
