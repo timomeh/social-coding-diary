@@ -10,14 +10,11 @@
 	- [#04 cologne.rb](#04-colognerb)
 	- [#05 Talk Prepartion](#05-talk-prepartion)
 	- [#06 Talks & Golf](#06-talks-golf)
+	- [#07 Bugfixing & Testing](#07-bugfixing-testing)
 
 <!-- /TOC -->
 
 ## Sessions
-
-1. Juni: Talks und Golf
-8. Juni: Testing / Bugfixing
-20. Juli
 
 ### #01 Git Basics
 
@@ -296,3 +293,17 @@ node -e "h=require('http');h.createServer((a,b)=>h.get('http://loremflickr'+'.co
 ```
 
 Zusammen mit dem Hashtag #nodejs hat das in [einen Tweet](https://twitter.com/timomeh/status/738021433939505152) gepasst.
+
+### #07 Bugfixing & Testing
+
+*8. Juni*
+
+In dieser Session haben wir uns gemeinsam Bugfixing und Testing angeschaut. Dazu hat Dirk zum austoben [batman-ipsum](https://github.com/wpf-social-coding/batman-ipsum) zur Verfügung gestellt. Auf drei Branches waren drei verschiedene Bugs, die wir gefixt haben und dazu jeweils einen Pull Request geöffnet haben.
+
+Um Anschluss wurde uns Testing am Beispiel von Ruby mit batman-ipsum gezeigt. Die Konzepte davon sind aber auf die meisten Programmiersprachen übertragbar.
+
+Oft hat man `describe` und `it` zur Verfügung.
+
+Mit `describe` kann man einen Block mit mehreren Tests erstellen. Ein Test befindet sich jeweils in einem `it`.
+
+In dieser Session haben wir vorwiegend um Unit Tests gekümmert.
